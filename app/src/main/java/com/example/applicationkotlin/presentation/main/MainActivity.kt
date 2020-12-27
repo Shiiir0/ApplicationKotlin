@@ -1,10 +1,13 @@
-package com.example.applicationkotlin
+package com.example.applicationkotlin.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import com.example.applicationkotlin.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
+
+import kotlin.reflect.KProperty
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         main_button.setOnClickListener{
-            mainViewModel.onClickedButton()
+            mainViewModel.onClickedButton("")
         }
 
         mainViewModel.text.observe(this, Observer {
