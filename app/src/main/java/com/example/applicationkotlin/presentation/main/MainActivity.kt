@@ -4,10 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.example.applicationkotlin.R
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
-
-import kotlin.reflect.KProperty
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,12 +17,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        main_button.setOnClickListener{
-            mainViewModel.onClickedButton("")
+        mainViewModel.loginLiveData.observe(this, Observer {
+            when(it) {
+                is LoginSuccess ->{}
+                LoginError -> {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Erreur")
+                        .setMessage("compte inconnu")
+                        .setPositiveButton("OK") {dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
+                }
+            }
+        })
+        login_button.setOnClickListener{
+            mainViewModel.onClickedLogin(login_edit.text.toString().trim())
         }
 
-        mainViewModel.text.observe(this, Observer {
-            main_text.text = it.toString()
-        })
     }
 }
