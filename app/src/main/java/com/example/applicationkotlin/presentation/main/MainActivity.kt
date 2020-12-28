@@ -31,8 +31,35 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
+        mainViewModel.registerLiveData.observe(this, Observer {
+            when(it) {
+                is RegisterSuccess -> {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Success")
+                        .setMessage("Compte créé !")
+                        .setPositiveButton("OK") {dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
+                }
+                RegisterError -> {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Error")
+                        .setMessage("Paramètre invalide ou compte déjà existant")
+                        .setPositiveButton("OK") {dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .show()
+                }
+            }
+        })
+
         login_button.setOnClickListener{
-            mainViewModel.onClickedLogin(login_edit.text.toString().trim())
+            mainViewModel.onClickedLogin(login_edit.text.toString().trim(), password_edit.text.toString().trim())
+        }
+        create_account_button.setOnClickListener{
+            mainViewModel.onClickedRegister(login_edit.text.toString().trim(), password_edit.text.toString().trim())
         }
 
     }
