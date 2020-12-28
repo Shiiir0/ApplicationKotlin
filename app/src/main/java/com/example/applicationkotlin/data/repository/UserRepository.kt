@@ -8,12 +8,16 @@ import com.example.applicationkotlin.domain.entity.User
 
 class UserRepository(private val databaseDao: DatabaseDao) {
     suspend fun createUser(user: User) {
-        //Appel API pour mettre a jour la base de donnée
         databaseDao.insert(user.toData())
     }
 
     fun getUser(email: String) : User? {
         val userLocal : UserLocal? = databaseDao.findByName(email)
+        return userLocal?.toEntity()
+    }
+
+    fun getAccount(email: String, password: String) : User? {
+        val userLocal : UserLocal? = databaseDao.findAccount(email, password)
         return userLocal?.toEntity()
     }
 }
