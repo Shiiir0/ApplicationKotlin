@@ -1,5 +1,6 @@
 package com.example.applicationkotlin.presentation.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -19,7 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.loginLiveData.observe(this, Observer {
             when(it) {
-                is LoginSuccess ->{}
+                is LoginSuccess ->{
+                    val intent = Intent(this, ListActivity::class.java)
+                    startActivity(intent)
+                }
                 LoginError -> {
                     MaterialAlertDialogBuilder(this)
                         .setTitle("Erreur")
