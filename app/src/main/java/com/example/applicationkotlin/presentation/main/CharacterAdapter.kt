@@ -1,5 +1,6 @@
 package com.example.applicationkotlin.presentation.main
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +10,22 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.applicationkotlin.R
 import com.example.applicationkotlin.domain.entity.Character
+import com.squareup.picasso.Picasso
 
-class CharacterAdapter(private val mCharacters: List<Character>) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
+class CharacterAdapter(private val mCharacters: List<Character>): RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
 
     inner class ViewHolder(listItemView: View) : RecyclerView.ViewHolder(listItemView) {
 
         val firstLine = itemView.findViewById<TextView>(R.id.firstLine)
         val image = itemView.findViewById<ImageView>(R.id.icon)
         val secondLine = itemView.findViewById<TextView>(R.id.secondLine)
+
+        fun bind(character: Character) {
+
+            firstLine.text = character.name
+            secondLine.text = character.ancestry
+            Picasso.get().load(character.image).into(image)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterAdapter.ViewHolder {
@@ -29,13 +38,12 @@ class CharacterAdapter(private val mCharacters: List<Character>) : RecyclerView.
     }
 
     override fun onBindViewHolder(viewHolder: CharacterAdapter.ViewHolder, position: Int) {
-        val character: Character = mCharacters.get(position)
 
-        val firstLineTextView = viewHolder.firstLine
-        firstLineTextView.text = character.surname
-        val image = viewHolder.image
-        val secondLineTextView = viewHolder.secondLine
-        secondLineTextView.text =  character.test
+        Log.d("Response", "List Count :${mCharacters.size} ")
+
+
+        return viewHolder.bind(mCharacters[position])
+
     }
 
     override fun getItemCount(): Int {
