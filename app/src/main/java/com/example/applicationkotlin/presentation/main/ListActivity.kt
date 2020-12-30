@@ -56,7 +56,7 @@ class ListActivity : AppCompatActivity(), CharacterAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(position: Int, mCharacters : List<Character>) {
-        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
 
         val intent = Intent(this, DetailsActivity::class.java)
         intent.putExtra("EXTRA_CHARACTER", mCharacters[position] as Serializable)
