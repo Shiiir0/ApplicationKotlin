@@ -1,30 +1,32 @@
 package com.example.applicationkotlin.domain.entity
 
+import java.io.Serializable
+
 data class Character(
     val name : String?=" ",
     val species :  String?=" ",
-    /*val gender :  String?=" ",
+    val gender :  String?=" ",
     val house :  String?=" ",
-    val dataOfBirth :  String?=" ",
-    val yearOfBirth : Int?=0,*/
+    val dateOfBirth :  String?=" ",
+    //val yearOfBirth : Int?=0,
     val ancestry :  String?=" ",
-    /*val eyeColour :  String?=" ",
+    val eyeColour :  String?=" ",
     val hairColour :  String?=" ",
-    val wand : Wand,
+    //val wand : Wand,
     val patronus :  String?=" ",
-    val hogwartsStudent : Boolean,
-    val hogwartsStaff : Boolean,
+    //val hogwartsStudent : Boolean,
+    //val hogwartsStaff : Boolean,
     val actor :  String?=" ",
-    val alive : Boolean,*/
+    //val alive : Boolean,
     val image :  String?=" "
 
-) /*{
-        data class Wand(
+) : Serializable {
+        /*data class Wand(
             val wood :  String?=" ",
             val core :  String?=" "
             //val length : Int?=0
-        )
-    }*/
+        )*/
+    }
 
     /*companion object {
         private var lastContactId = 0

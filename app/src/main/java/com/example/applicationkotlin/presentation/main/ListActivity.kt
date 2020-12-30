@@ -1,5 +1,6 @@
 package com.example.applicationkotlin.presentation.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -10,11 +11,15 @@ import com.example.applicationkotlin.domain.entity.Character
 import com.example.applicationkotlin.domain.services.HpService
 import com.example.applicationkotlin.domain.services.ServiceBuilder
 import kotlinx.android.synthetic.main.activity_list.*
+import org.koin.core.logger.MESSAGE
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.Serializable
 
-class ListActivity : AppCompatActivity() {
+class ListActivity : AppCompatActivity(), CharacterAdapter.OnItemClickListener {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +38,12 @@ class ListActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<Character>>, response: Response<List<Character>>) {
                 Log.d("Response", "onResponse: ${response.body()}")
                 if (response.isSuccessful){
-                    val characterList  = response.body()!!
+                    val characterList = response.body()!!
                     Log.d("Response", "characterList size : ${characterList.size}")
                     rvCharacters.apply {
                         setHasFixedSize(true)
                         layoutManager = LinearLayoutManager(this@ListActivity)
-                        adapter = CharacterAdapter(response.body()!!)
+                        adapter = CharacterAdapter(response.body()!!, this@ListActivity)
                     }
                 }else{
                     Toast.makeText(this@ListActivity, "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
@@ -50,4 +55,12 @@ class ListActivity : AppCompatActivity() {
         })
     }
 
+    override fun onItemClick(position: Int, mCharacters : List<Character>) {
+        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, DetailsActivity::class.java)
+        intent.putExtra("EXTRA_CHARACTER", mCharacters[position] as Serializable)
+
+        startActivity(intent)
+    }
 }
