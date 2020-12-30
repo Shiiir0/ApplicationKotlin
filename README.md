@@ -41,10 +41,10 @@
 
 <p> -> Affiche liste des personnages </p>
 
-<img src = "https://raw.githubusercontent.com/Shiiir0/ApplicationKotlin/master/img_rd/ecran_liste.PNG" title = "ecran liste" alt = "ecran liste" width="200" height="400">
+<img src = "https://raw.githubusercontent.com/Shiiir0/ApplicationKotlin/master/img_rd/ecran_liste.png" title = "ecran liste" alt = "ecran liste" width="200" height="400">
 
 <p> Ecran detail : <p/>
 
 <p> -> Affiche le detail d'un personnage </p>
 
-<img src = "https://raw.githubusercontent.com/Shiiir0/ApplicationKotlin/master/img_rd/ecran_details.PNG" title = "ecran details" alt = "ecran details" width="200" height="400">
+<img src = "https://raw.githubusercontent.com/Shiiir0/ApplicationKotlin/master/img_rd/ecran_details.png" title = "ecran details" alt = "ecran details" width="200" height="400">
