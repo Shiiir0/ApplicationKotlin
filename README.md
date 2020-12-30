@@ -37,7 +37,7 @@
 
 <p> -> Affiche acceuil </p>
 
-<img src = "https://github.com/Shiiir0/ApplicationKotlin/tree/master/img_rd/ecran_acceuil.png" title = "ecran acceuil" alt = "ecran acceuil">
+![alt text](https://github.com/Shiiir0/ApplicationKotlin/tree/master/img_rd/ecran_acceuil.png?raw=true)
 
 <p> -> Affiche liste des personnages </p>
 
