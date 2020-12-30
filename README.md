@@ -7,7 +7,7 @@
 ### Présentation
 
 <p> Un projet de 4ème année démontrant l'utilisation en Kotlin d'une Architecture MVVM et Clean code, d'une lecture d'APIrest, d'une base de données utilisateur, d'un affichage d'une RecyclerView et d'un affichage de détails. </p>
-<p> Cette application affiche une page de d'accueil permettant de vous authentifiez et de vous enregistrer. Une fois authentifié, vous pourrez avoir accès à une liste de personnages sortie du film Harry Potter et en cliquant sur le personnage que vous souhaitez, vous vous rendrez sur une page de détail du personnage en question.</p>
+<p> Cette application affiche une page de d'acceuil permettant de vous authentifiez et de vous enregistrer. Une fois authentifié, vous pourrez avoir accès à une liste de personnages sortie du film Harry Potter et en cliquant sur le personnage que vous souhaitez, vous vous rendrez sur une page de détail du personnage en question.</p>
 
 ### Prérequis
 
