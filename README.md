@@ -37,14 +37,14 @@
 
 <p> -> Affiche acceuil </p>
 
-<img src = "https://github.com/Shiiir0/ApplicationKotlin/blob/master/img_rd/ecran_acceuil.PNG" title = "ecran acceuil" alt = "ecran acceuil">
+<img src = "https://github.com/Shiiir0/ApplicationKotlin/tree/master/img_rd/ecran_acceuil.PNG" title = "ecran acceuil" alt = "ecran acceuil">
 
 <p> -> Affiche liste des personnages </p>
 
-<img src = "https://github.com/Shiiir0/ApplicationKotlin/blob/master/img_rd/ecran_liste.PNG" title = "ecran liste" alt = "ecran liste">
+<img src = "https://github.com/Shiiir0/ApplicationKotlin/tree/master/img_rd/ecran_liste.PNG" title = "ecran liste" alt = "ecran liste">
 
 <p> Ecran detail : <p/>
 
 <p> -> Affiche le detail d'un personnage </p>
 
-<img src = "https://github.com/Shiiir0/ApplicationKotlin/blob/master/img_rd/ecran_details.PNG" title = "ecran details" alt = "ecran details">
+<img src = "https://github.com/Shiiir0/ApplicationKotlin/tree/master/img_rd/ecran_details.PNG" title = "ecran details" alt = "ecran details">
